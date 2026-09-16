@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /portal.html
+Disallow: /duschtassen.html
+Disallow: /express-line.html
+Disallow: /downloads/
+
+Sitemap: https://fugenlosedusche.com/sitemap.xml
