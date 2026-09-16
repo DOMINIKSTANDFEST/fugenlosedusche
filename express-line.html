@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <title>Express Line — Standfest Partnerportal</title><script>
 (function(){
-  var KEY='pk_test_Y3VkZGx5LXdlcmV3b2xmLTEwODIuY2xlcmsuYWNjb3VudHMuZGV2JA', FAPI=atob(KEY.slice(8)).replace(/\$/,'');
+  var KEY='pk_live_Y2xlcmsuZnVnZW5sb3NlZHVzY2hlLmNvbSQ', FAPI=atob(KEY.slice(8)).replace(/\$/,'');
   function cover(){ var d=document.createElement('div'); d.id='__sf_gate'; d.style.cssText='position:fixed;inset:0;z-index:2147483647;background:#EBEFEF;display:flex;align-items:center;justify-content:center;font:15px Jost,sans-serif;color:rgba(0,0,0,.6)'; d.textContent='Zugang wird geprüft …'; (document.body||document.documentElement).appendChild(d); return d; }
   function run(){
     var c=cover();
+    var ui=document.createElement('script'); ui.crossOrigin='anonymous'; ui.src='https://'+FAPI+'/npm/@clerk/ui@1/dist/ui.browser.js'; document.head.appendChild(ui);
     var s=document.createElement('script'); s.async=true; s.crossOrigin='anonymous'; s.setAttribute('data-clerk-publishable-key',KEY);
-    s.src='https://'+FAPI+'/npm/@clerk/clerk-js@5/dist/clerk.browser.js';
+    s.src='https://'+FAPI+'/npm/@clerk/clerk-js@6/dist/clerk.browser.js';
     s.onload=function(){ window.Clerk.load().then(function(){
       var u=window.Clerk.user; if(!u){ location.replace('login.html?next=express-line.html'); return; }
       var arr=function(v){return Array.isArray(v)?v:typeof v==='string'?v.split(','):[];};
